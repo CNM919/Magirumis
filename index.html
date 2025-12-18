@@ -4,13 +4,14 @@
   <meta charset="UTF-8">
   <title>[Artist Name] Crochet Art</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <style>
     :root {
-      --bg: #fff7f2;
-      --accent: #ff8ba7;
-      --accent2: #ffc75f;
-      --accent3: #8fd3f4;
-      --text: #333333;
+      --bg1: #d8ecff;   /* light blue */
+      --bg2: #86b6f6;   /* medium blue */
+      --accent: #2b6cb0;   /* deep blue for prices */
+      --accent2: #4f9bd9;  /* lighter blue highlight */
+      --text: #1a1a1a;
       --card-bg: #ffffff;
     }
 
@@ -18,163 +19,75 @@
       box-sizing: border-box;
     }
 
-body {
-  margin: 0;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  background: linear-gradient(180deg, #cfe9ff, #6ca8ff);
-  color: var(--text);
-  line-height: 1.6;
-}
-
+    body {
+      margin: 0;
+      font-family: system-ui, Arial, sans-serif;
+      background: linear-gradient(180deg, var(--bg1), var(--bg2));
+      color: var(--text);
+      line-height: 1.6;
+    }
 
     header {
-      padding: 1.5rem 1rem;
-      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      padding: 2rem 1rem;
+      text-align: center;
       color: #ffffff;
+      background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: clamp(2.2rem, 4vw, 3rem);
+      letter-spacing: 0.03em;
+    }
+
+    header p {
+      margin: 0.5rem 0 0;
+      font-size: 1rem;
+      opacity: 0.9;
     }
 
     .container {
       max-width: 960px;
       margin: 0 auto;
-      padding: 0 1rem;
-    }
-
-    .brand {
-      display: flex;
-      flex-direction: column;
-      gap: 0.25rem;
-      align-items: flex-start;
-    }
-
-    .brand h1 {
-      margin: 0;
-      font-size: clamp(2rem, 4vw, 2.6rem);
-      letter-spacing: 0.04em;
-    }
-
-    .tagline {
-      margin: 0;
-      font-size: 0.95rem;
-      text-transform: uppercase;
-      letter-spacing: 0.15em;
-    }
-
-    .hero {
-      padding: 2rem 0 1rem;
-    }
-
-    .hero-inner {
-      display: grid;
-      grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
-      gap: 1.5rem;
-      align-items: center;
-    }
-
-    .hero-text h2 {
-      margin: 0 0 0.5rem;
-      font-size: clamp(1.6rem, 3vw, 2rem);
-    }
-
-    .hero-text p {
-      margin: 0.25rem 0;
-    }
-
-    .hero-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      padding: 0.3rem 0.8rem;
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.9);
-      color: var(--accent);
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      margin-bottom: 0.75rem;
-    }
-
-    .hero-highlight {
-      background: rgba(255, 255, 255, 0.8);
-      padding: 0.75rem 1rem;
-      border-radius: 0.9rem;
-      font-size: 0.9rem;
-      margin-top: 0.75rem;
-    }
-
-    .hero-image {
-      background: var(--card-bg);
-      border-radius: 1rem;
-      padding: 0.75rem;
-      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.07);
-      border: 2px dashed rgba(0, 0, 0, 0.08);
-    }
-
-    .hero-image-inner {
-      border-radius: 0.75rem;
-      overflow: hidden;
-      background: linear-gradient(135deg, var(--accent3), var(--accent2));
-      min-height: 180px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #ffffff;
-      text-align: center;
-      padding: 1.25rem;
-      font-size: 1rem;
-      font-weight: 600;
-    }
-
-    main {
-      padding: 1.5rem 0 3rem;
+      padding: 1rem;
     }
 
     section {
-      margin-bottom: 2.5rem;
+      margin: 2.5rem 0;
     }
 
     section h2 {
-      font-size: 1.4rem;
       margin-bottom: 0.5rem;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
+      font-size: 1.6rem;
+      border-left: 6px solid var(--accent);
+      padding-left: 0.5rem;
     }
 
-    .section-tag {
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      color: rgba(0, 0, 0, 0.5);
-      margin-bottom: 0.25rem;
-    }
-
-    .section-note {
-      font-size: 0.9rem;
-      color: rgba(0, 0, 0, 0.7);
-      max-width: 640px;
-    }
-
+    /* GALLERY */
     .gallery-grid {
       margin-top: 1rem;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 1.25rem;
     }
 
     .art-card {
       background: var(--card-bg);
       border-radius: 1rem;
+      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.1);
       overflow: hidden;
-      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.06);
-      display: flex;
-      flex-direction: column;
-      border: 1px solid rgba(0, 0, 0, 0.03);
+      transition: transform 0.2s ease;
+      border: 1px solid rgba(0,0,0,0.05);
+    }
+
+    .art-card:hover {
+      transform: translateY(-4px);
     }
 
     .art-image-wrap {
       width: 100%;
-      aspect-ratio: 4 / 3;
-      background: #f7f7f7;
+      aspect-ratio: 4/3;
+      background: #e6eef8;
       overflow: hidden;
     }
 
@@ -186,114 +99,68 @@ body {
     }
 
     .art-body {
-      padding: 0.75rem 0.9rem 0.9rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.25rem;
+      padding: 0.9rem 1rem;
     }
 
     .art-title {
       margin: 0;
-      font-size: 1rem;
+      font-size: 1.1rem;
       font-weight: 600;
     }
 
     .art-meta {
       display: flex;
       justify-content: space-between;
-      align-items: baseline;
-      gap: 0.5rem;
-      font-size: 0.86rem;
+      align-items: center;
+      font-size: 0.9rem;
+      margin: 0.25rem 0 0.4rem;
     }
 
     .art-price {
-      font-weight: 700;
       color: var(--accent);
-    }
-
-    .art-size {
-      font-size: 0.8rem;
-      color: rgba(0, 0, 0, 0.7);
+      font-weight: 700;
     }
 
     .art-description {
-      font-size: 0.86rem;
-      color: rgba(0, 0, 0, 0.78);
+      margin-top: 0.2rem;
+      font-size: 0.85rem;
+      opacity: 0.8;
     }
 
     .badge {
       display: inline-block;
-      padding: 0.1rem 0.55rem;
+      margin-top: 0.4rem;
+      padding: 0.15rem 0.6rem;
       border-radius: 999px;
       font-size: 0.7rem;
       text-transform: uppercase;
-      letter-spacing: 0.16em;
-      background: var(--accent3);
-      color: #133a4a;
+      letter-spacing: 0.15em;
+      background: var(--accent2);
+      color: #ffffff;
     }
 
-    .about-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
-      gap: 1.5rem;
-      margin-top: 1rem;
+    .badge.sold {
+      background: #94a3b8; /* slate gray */
+      color: #ffffff;
     }
 
-    .about-card,
-    .info-card {
+    /* ABOUT */
+    .about-card {
       background: var(--card-bg);
+      padding: 1rem 1.2rem;
       border-radius: 1rem;
-      padding: 1rem 1.1rem;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-      border: 1px solid rgba(0, 0, 0, 0.03);
-      font-size: 0.93rem;
-    }
-
-    .info-list {
-      list-style: none;
-      padding: 0;
-      margin: 0.5rem 0 0;
-      font-size: 0.9rem;
-    }
-
-    .info-list li {
-      margin-bottom: 0.3rem;
-    }
-
-    .info-label {
-      font-weight: 600;
-    }
-
-    .contact-grid {
-      margin-top: 1rem;
-      display: grid;
-      grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
-      gap: 1.5rem;
-    }
-
-    .contact-card {
-      background: var(--card-bg);
-      border-radius: 1rem;
-      padding: 1rem 1.1rem;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-      border: 1px solid rgba(0, 0, 0, 0.03);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+      border: 1px solid rgba(0,0,0,0.05);
       font-size: 0.95rem;
     }
 
-    .contact-card p {
-      margin: 0.1rem 0 0.5rem;
-    }
-
-    .contact-highlight {
-      background: rgba(255, 255, 255, 0.8);
-      border-radius: 0.8rem;
-      padding: 0.75rem;
-      font-size: 0.88rem;
-      margin-top: 0.25rem;
-    }
-
-    .contact-method {
-      margin-top: 0.5rem;
+    /* CONTACT */
+    .contact-card {
+      background: var(--card-bg);
+      padding: 1rem 1.2rem;
+      border-radius: 1rem;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+      border: 1px solid rgba(0,0,0,0.05);
       font-size: 0.95rem;
     }
 
@@ -307,249 +174,145 @@ body {
       text-decoration: underline;
     }
 
-    .social-links {
-      list-style: none;
-      padding: 0;
-      margin: 0.5rem 0 0;
-      font-size: 0.9rem;
-    }
-
-    .social-links li {
-      margin-bottom: 0.25rem;
-    }
-
     footer {
-      border-top: 1px solid rgba(0, 0, 0, 0.05);
-      padding: 1rem;
-      font-size: 0.8rem;
       text-align: center;
-      color: rgba(0, 0, 0, 0.6);
-      background: #fffaf4;
-    }
-
-    @media (max-width: 768px) {
-      .hero-inner,
-      .about-grid,
-      .contact-grid {
-        grid-template-columns: minmax(0, 1fr);
-      }
-
-      header {
-        padding-bottom: 1rem;
-      }
-
-      .hero {
-        padding-top: 1.25rem;
-      }
+      padding: 1rem;
+      margin-top: 2rem;
+      font-size: 0.85rem;
+      background: rgba(255,255,255,0.4);
+      color: #1a1a1a;
     }
   </style>
 </head>
+
 <body>
-  <!-- HEADER / HERO -->
-  <header>
-    <div class="container">
-      <div class="brand">
-        <p class="tagline">crochet • color • cozy joy</p>
-        <h1>[Artist Name] Crochet</h1>
+
+<header>
+  <h1>[Artist Name] Crochet Art</h1>
+  <p>Handcrafted crochet pieces made with color, texture, and character.</p>
+</header>
+
+<div class="container">
+
+  <!-- GALLERY SECTION -->
+  <section id="gallery">
+    <h2>Available Artwork</h2>
+    <p>Each piece is handmade and one-of-a-kind. To purchase, reference the piece name when contacting.</p>
+
+    <div class="gallery-grid">
+
+      <!-- ITEM 1 -->
+      <div class="art-card">
+        <div class="art-image-wrap">
+          <img src="crochet1.jpg" alt="Crochet artwork 1">
+        </div>
+        <div class="art-body">
+          <h3 class="art-title">Blue Ridge Wall Hanging</h3>
+          <div class="art-meta">
+            <span class="art-price">$75</span>
+            <span class="art-size">12" × 20"</span>
+          </div>
+          <p class="art-description">Layers of cool blue tones inspired by misty mountain mornings.</p>
+          <span class="badge">Available</span>
+        </div>
       </div>
 
-      <section class="hero">
-        <div class="hero-inner">
-          <div class="hero-text">
-            <div class="hero-pill">
-              ✨ Hand-made crochet art
-            </div>
-            <h2>Soft, colorful pieces made one stitch at a time.</h2>
-            <p>Browse a rotating collection of handmade crochet wall art, plushies, and home decor. Each piece is one-of-a-kind and stitched with care.</p>
-            <div class="hero-highlight">
-              💌 To purchase, just send a quick message with the piece name and I’ll confirm payment and shipping details.
-            </div>
-          </div>
-
-          <div class="hero-image">
-            <div class="hero-image-inner">
-              <!-- Replace this with a hero image if you prefer -->
-              A bright, cozy world of yarn, texture, and color.
-            </div>
-          </div>
+      <!-- ITEM 2 -->
+      <div class="art-card">
+        <div class="art-image-wrap">
+          <img src="crochet2.jpg" alt="Crochet artwork 2">
         </div>
-      </section>
+        <div class="art-body">
+          <h3 class="art-title">Ocean Spirit Plush</h3>
+          <div class="art-meta">
+            <span class="art-price">$45</span>
+            <span class="art-size">8" tall</span>
+          </div>
+          <p class="art-description">A soft, friendly plush character in calming ocean colors.</p>
+          <span class="badge">Available</span>
+        </div>
+      </div>
+
+      <!-- ITEM 3 -->
+      <div class="art-card">
+        <div class="art-image-wrap">
+          <img src="crochet3.jpg" alt="Crochet artwork 3">
+        </div>
+        <div class="art-body">
+          <h3 class="art-title">Midnight Coaster Set (4)</h3>
+          <div class="art-meta">
+            <span class="art-price">$30</span>
+            <span class="art-size">4" diameter</span>
+          </div>
+          <p class="art-description">A set of sturdy coasters in navy and steel-blue tones.</p>
+          <span class="badge">Available</span>
+        </div>
+      </div>
+
+      <!-- ITEM 4 (Sold Example) -->
+      <div class="art-card">
+        <div class="art-image-wrap">
+          <img src="crochet4.jpg" alt="Crochet artwork 4">
+        </div>
+        <div class="art-body">
+          <h3 class="art-title">Waves & Weave Tapestry</h3>
+          <div class="art-meta">
+            <span class="art-price">$95</span>
+            <span class="art-size">14" × 24"</span>
+          </div>
+          <p class="art-description">Flowing textures inspired by shifting tides. Can be remade upon request.</p>
+          <span class="badge sold">Sold</span>
+        </div>
+      </div>
+
     </div>
-  </header>
+  </section>
 
-  <main>
-    <div class="container">
-      <!-- GALLERY SECTION -->
-      <section id="gallery">
-        <div class="section-tag">gallery</div>
-        <h2>Available Crochet Artwork</h2>
-        <p class="section-note">
-          Click to zoom once it’s on your own site. Pieces marked as sold can be remade on request, with slight variations.
-        </p>
-
-        <div class="gallery-grid">
-          <!-- CARD 1 -->
-          <article class="art-card">
-            <div class="art-image-wrap">
-              <!-- Replace crochet1.jpg with your own image file -->
-              <img src="crochet1.jpg" alt="Colorful crochet wall hanging with geometric shapes">
-            </div>
-            <div class="art-body">
-              <h3 class="art-title">Sunrise Wall Hanging</h3>
-              <div class="art-meta">
-                <span class="art-price">$65</span>
-                <span class="art-size">Approx. 10" × 18"</span>
-              </div>
-              <p class="art-description">
-                Layers of warm yellows, pinks, and soft orange tones in a textured wall piece that brings sunshine to any room.
-              </p>
-              <span class="badge">Available</span>
-            </div>
-          </article>
-
-          <!-- CARD 2 -->
-          <article class="art-card">
-            <div class="art-image-wrap">
-              <img src="crochet2.jpg" alt="Crochet plush frog with scarf">
-            </div>
-            <div class="art-body">
-              <h3 class="art-title">Cozy Frog Friend</h3>
-              <div class="art-meta">
-                <span class="art-price">$40</span>
-                <span class="art-size">Approx. 7" tall</span>
-              </div>
-              <p class="art-description">
-                A soft, squishy frog plush with a tiny removable scarf. Perfect for desks, shelves, and cuddles.
-              </p>
-              <span class="badge">Available</span>
-            </div>
-          </article>
-
-          <!-- CARD 3 -->
-          <article class="art-card">
-            <div class="art-image-wrap">
-              <img src="crochet3.jpg" alt="Pastel crochet coasters arranged in a circle">
-            </div>
-            <div class="art-body">
-              <h3 class="art-title">Pastel Coaster Set (4)</h3>
-              <div class="art-meta">
-                <span class="art-price">$28</span>
-                <span class="art-size">Approx. 4" diameter</span>
-              </div>
-              <p class="art-description">
-                A set of four pastel coasters in coordinating colors. Thick and sturdy enough for hot or cold drinks.
-              </p>
-              <span class="badge">Available</span>
-            </div>
-          </article>
-
-          <!-- CARD 4 (SOLD EXAMPLE) -->
-          <article class="art-card">
-            <div class="art-image-wrap">
-              <img src="crochet4.jpg" alt="Large crochet wall hanging with fringe">
-            </div>
-            <div class="art-body">
-              <h3 class="art-title">Dreamy Fringe Tapestry</h3>
-              <div class="art-meta">
-                <span class="art-price">$90</span>
-                <span class="art-size">Approx. 14" × 24"</span>
-              </div>
-              <p class="art-description">
-                Statement wall tapestry with long fringe and layered textures. This original has sold but can be remade with similar colors.
-              </p>
-              <span class="badge" style="background:#ffcfda; color:#7c2238;">Sold / Made to order</span>
-            </div>
-          </article>
-
-          <!--
-            TO ADD MORE PIECES:
-            1. Duplicate one of the <article class="art-card"> blocks.
-            2. Change the image filename, title, price, size, description, and badge text.
-          -->
-        </div>
-      </section>
-
-      <!-- ABOUT / INFO SECTION -->
-      <section id="about">
-        <div class="section-tag">about</div>
-        <h2>About the Artist</h2>
-
-        <div class="about-grid">
-          <div class="about-card">
-            <p>
-              Hi, I’m [Artist Name] — a crochet artist who loves bold color, playful shapes, and cozy textures. Every piece is designed and stitched by hand in small batches.
-            </p>
-            <p>
-              I work mostly with cotton and acrylic yarns, and I enjoy creating a mix of wall art, plush characters, and tiny everyday pieces like coasters and keychains.
-            </p>
-            <p>
-              If you see something you like that’s sold, reach out anyway — I’m happy to recreate a similar piece or customize colors just for you.
-            </p>
-          </div>
-
-          <div class="info-card">
-            <h3 style="margin-top:0;">Details & Pricing Notes</h3>
-            <ul class="info-list">
-              <li><span class="info-label">Materials:</span> High-quality yarn, wood dowels, safety eyes, fiberfill stuffing</li>
-              <li><span class="info-label">Custom colors:</span> Usually available at no extra cost</li>
-              <li><span class="info-label">Processing time:</span> 1–3 weeks for made-to-order pieces</li>
-              <li><span class="info-label">Shipping:</span> Calculated based on destination; multiple items can be combined</li>
-              <li><span class="info-label">Care:</span> Spot clean only unless noted otherwise</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <!-- CONTACT SECTION -->
-      <section id="contact">
-        <div class="section-tag">contact</div>
-        <h2>How to Purchase</h2>
-
-        <div class="contact-grid">
-          <div class="contact-card">
-            <p>
-              To purchase a piece, please send me a message with:
-            </p>
-            <ul class="info-list">
-              <li>✅ The piece name (for example: <em>“Sunrise Wall Hanging”</em>)</li>
-              <li>✅ Your shipping country or ZIP/postal code</li>
-              <li>✅ Any color or customization notes (if applicable)</li>
-            </ul>
-            <div class="contact-highlight">
-              I’ll reply with total cost (including shipping), payment link/options, and the estimated ship date. Your piece is reserved once payment is received.
-            </div>
-
-            <div class="contact-method">
-              Email: <a href="mailto:youremail@example.com">youremail@example.com</a><br>
-              Instagram: <a href="https://www.instagram.com/yourhandle" target="_blank">@yourhandle</a>
-            </div>
-          </div>
-
-          <div class="contact-card">
-            <h3 style="margin-top:0;">Quick Info</h3>
-            <ul class="social-links">
-              <li><span class="info-label">Location:</span> [City, Country]</li>
-              <li><span class="info-label">Payment:</span> [PayPal, Venmo, etc.]</li>
-              <li><span class="info-label">Commissions:</span> Open / Closed (update as needed)</li>
-              <li><span class="info-label">Response time:</span> Usually within 1–2 business days</li>
-            </ul>
-            <p style="margin-top:0.75rem;">
-              You can also follow along on social for behind-the-scenes photos, work-in-progress shots, and new collection drops.
-            </p>
-          </div>
-        </div>
-      </section>
+  <!-- ABOUT SECTION -->
+  <section id="about">
+    <h2>About the Artist</h2>
+    <div class="about-card">
+      <p>
+        Hi, I’m [Artist Name]. I create crochet artwork that blends texture, color, and structure —
+        from wall hangings to small home pieces and plush characters. My work draws heavily from nature,
+        especially water, sky, and landscape formations.
+      </p>
+      <p>
+        Every item is handmade with care and crafted in small batches. Custom colors or made-to-order versions
+        of sold pieces are often available.
+      </p>
     </div>
-  </main>
+  </section>
 
-    <footer>
-      &copy; <span id="year"></span> [Artist Name] Crochet. All rights reserved.
-    </footer>
+  <!-- CONTACT SECTION -->
+  <section id="contact">
+    <h2>Contact & Purchasing</h2>
+    <div class="contact-card">
+      <p>To purchase a piece, send me a message including:</p>
+      <ul>
+        <li>• The artwork name</li>
+        <li>• Your city or ZIP code (for shipping)</li>
+        <li>• Any customization notes (if applicable)</li>
+      </ul>
 
-    <script>
-      // Auto-update year in the footer
-      document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
+      <div class="contact-method" style="margin-top: 0.75rem;">
+        Email: <a href="mailto:youremail@example.com">youremail@example.com</a><br>
+        Instagram: <a href="https://www.instagram.com/yourhandle">@yourhandle</a>
+      </div>
+
+      <p style="margin-top:1rem; opacity:0.8;">Payment options available: PayPal, Venmo, CashApp.</p>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  © <span id="year"></span> [Artist Name] Crochet Art
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
 </body>
 </html>
-
