@@ -8,20 +8,15 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
-
   <style>
     :root {
       --bg1: #d8ecff;   /* light blue */
       --bg2: #86b6f6;   /* medium blue */
       --accent: #2b6cb0;   /* deep blue for prices */
       --accent2: #4f9bd9;  /* lighter blue highlight */
-      --text: #1a1a1a;
-      --card-bg: #ffffff;
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     body {
       margin: 0;
@@ -41,12 +36,10 @@
     header h1 {
       margin: 0;
       font-size: clamp(2.2rem, 4vw, 3rem);
-      letter-spacing: 0.03em;
     }
 
     header p {
       margin: 0.5rem 0 0;
-      font-size: 1rem;
       opacity: 0.9;
     }
 
@@ -56,9 +49,7 @@
       padding: 1rem;
     }
 
-    section {
-      margin: 2.5rem 0;
-    }
+    section { margin: 2.5rem 0; }
 
     section h2 {
       margin-bottom: 0.5rem;
@@ -67,7 +58,6 @@
       padding-left: 0.5rem;
     }
 
-    /* GALLERY */
     .gallery-grid {
       margin-top: 1rem;
       display: grid;
@@ -78,19 +68,14 @@
     .art-card {
       background: var(--card-bg);
       border-radius: 1rem;
-      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 8px 22px rgba(0,0,0,0.1);
       overflow: hidden;
-      transition: transform 0.2s ease;
       border: 1px solid rgba(0,0,0,0.05);
-    }
-
-    .art-card:hover {
-      transform: translateY(-4px);
     }
 
     .art-image-wrap {
       width: 100%;
-      aspect-ratio: 4/3;
+      aspect-ratio: 4 / 3;
       background: #e6eef8;
       overflow: hidden;
     }
@@ -98,13 +83,11 @@
     .art-image-wrap img {
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      object-fit: contain;
       display: block;
     }
 
-    .art-body {
-      padding: 0.9rem 1rem;
-    }
+    .art-body { padding: 0.9rem 1rem; }
 
     .art-title {
       margin: 0;
@@ -115,7 +98,6 @@
     .art-meta {
       display: flex;
       justify-content: space-between;
-      align-items: center;
       font-size: 0.9rem;
       margin: 0.25rem 0 0.4rem;
     }
@@ -126,7 +108,6 @@
     }
 
     .art-description {
-      margin-top: 0.2rem;
       font-size: 0.85rem;
       opacity: 0.8;
     }
@@ -138,53 +119,8 @@
       border-radius: 999px;
       font-size: 0.7rem;
       text-transform: uppercase;
-      letter-spacing: 0.15em;
       background: var(--accent2);
       color: #ffffff;
-    }
-
-    .badge.sold {
-      background: #94a3b8; /* slate gray */
-      color: #ffffff;
-    }
-
-    /* ABOUT */
-    .about-card {
-      background: var(--card-bg);
-      padding: 1rem 1.2rem;
-      border-radius: 1rem;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-      border: 1px solid rgba(0,0,0,0.05);
-      font-size: 0.95rem;
-    }
-
-    /* CONTACT */
-    .contact-card {
-      background: var(--card-bg);
-      padding: 1rem 1.2rem;
-      border-radius: 1rem;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-      border: 1px solid rgba(0,0,0,0.05);
-      font-size: 0.95rem;
-    }
-
-    .contact-method a {
-      color: var(--accent);
-      font-weight: 600;
-      text-decoration: none;
-    }
-
-    .contact-method a:hover {
-      text-decoration: underline;
-    }
-
-    footer {
-      text-align: center;
-      padding: 1rem;
-      margin-top: 2rem;
-      font-size: 0.85rem;
-      background: rgba(255,255,255,0.4);
-      color: #1a1a1a;
     }
   </style>
 </head>
@@ -198,113 +134,104 @@
 
 <div class="container">
 
-  <!-- GALLERY SECTION -->
-  <section id="gallery">
-    <h2>Available Artwork</h2>
-    <p>Each piece is handmade and one-of-a-kind. To purchase, reference the piece name when contacting.</p>
+<section id="gallery">
+  <h2>Available Artwork</h2>
+  <p>Each piece is handmade and one-of-a-kind. To purchase, reference the piece name when contacting.</p>
 
-    <div class="gallery-grid">
+  <div class="gallery-grid">
 
-      <!-- ITEM 1 -->
-      <div class="art-card">
-        <div class="art-image-wrap">
-          <img src="sample magirumis.png" alt="Crochet artwork 1">
-        </div>
-        <div class="art-body">
-          <h3 class="art-title">Blue Ridge Wall Hanging</h3>
-          <div class="art-meta">
-            <span class="art-price">$75</span>
-            <span class="art-size">8" tall"</span>
-          </div>
-          <p class="art-description">Layers of cool blue tones inspired by misty mountain mornings.</p>
-          <span class="badge">Available</span>
-        </div>
+    <!-- Snowman -->
+    <div class="art-card">
+      <div class="art-image-wrap">
+        <img src="snowman.jpeg" alt="Crochet Snowman">
       </div>
-
-      <!-- ITEM 2 -->
-      <div class="art-card">
-        <div class="art-image-wrap">
-          <img src="crochet2.jpg" alt="Crochet artwork 2">
+      <div class="art-body">
+        <h3 class="art-title">Winter Snowman</h3>
+        <div class="art-meta">
+          <span class="art-price">$—</span>
+          <span class="art-size">10" tall</span>
         </div>
-        <div class="art-body">
-          <h3 class="art-title">Ocean Spirit Plush</h3>
-          <div class="art-meta">
-            <span class="art-price">$45</span>
-            <span class="art-size">8" tall</span>
-          </div>
-          <p class="art-description">A soft, friendly plush character in calming ocean colors.</p>
-          <span class="badge">Available</span>
-        </div>
+        <p class="art-description">
+          A cheerful winter snowman with a bright red hat and scarf—perfect for holiday shelves and gifts.
+        </p>
+        <span class="badge">Available</span>
       </div>
-
-      <!-- ITEM 3 -->
-      <div class="art-card">
-        <div class="art-image-wrap">
-          <img src="crochet3.jpg" alt="Crochet artwork 3">
-        </div>
-        <div class="art-body">
-          <h3 class="art-title">Midnight Coaster Set (4)</h3>
-          <div class="art-meta">
-            <span class="art-price">$30</span>
-            <span class="art-size">4" diameter</span>
-          </div>
-          <p class="art-description">A set of sturdy coasters in navy and steel-blue tones.</p>
-          <span class="badge">Available</span>
-        </div>
-      </div>
-
-      <!-- ITEM 4 (Sold Example) -->
-      <div class="art-card">
-        <div class="art-image-wrap">
-          <img src="crochet4.jpg" alt="Crochet artwork 4">
-        </div>
-        <div class="art-body">
-          <h3 class="art-title">Waves & Weave Tapestry</h3>
-          <div class="art-meta">
-            <span class="art-price">$95</span>
-            <span class="art-size">14" × 24"</span>
-          </div>
-          <p class="art-description">Flowing textures inspired by shifting tides. Can be remade upon request.</p>
-          <span class="badge sold">Sold</span>
-        </div>
-      </div>
-
     </div>
-  </section>
 
-  <!-- ABOUT SECTION -->
-  <section id="about">
-    <h2>About the Artist</h2>
-    <div class="about-card">
-      <p>
-        Hi, I’m Alex! I'm almost 12 years old and I create crochet artwork that blends color, fun and the ultimate in cuteness —
-        from small hanging ornaments to large cuddly animals, each piece is hand-crafted and one of a kind.
-      </p>
-      <p>
-        Every item is made by me inspired by designs from all around the world. I can't wait for you to enjoy a custom Magirumi!
-      </p>
-    </div>
-  </section>
-
-  <!-- CONTACT SECTION -->
-  <section id="contact">
-    <h2>Contact & Purchasing</h2>
-    <div class="contact-card">
-      <p>To purchase a piece, send me a message including:</p>
-      <ul>
-        <li>The artwork name</li>
-        <li>About when and where you'd be able to meet (for shipping)</li>
-        <li>Any notes (if applicable)</li>
-      </ul>
-
-      <div class="contact-method" style="margin-top: 0.75rem;">
-        Email: <a href="mailto:youremail@example.com">youremail@example.com</a><br>
-        Web: <a href="https://www.magirumis.com">@yourhandle</a>
+    <!-- Tiger -->
+    <div class="art-card">
+      <div class="art-image-wrap">
+        <img src="tiger.jpeg" alt="Crochet Tiger">
       </div>
-
-      <p style="margin-top:1rem; opacity:0.8;">Payment options available: PayPal, Venmo, CashApp.</p>
+      <div class="art-body">
+        <h3 class="art-title">Striped Tiger</h3>
+        <div class="art-meta">
+          <span class="art-price">$—</span>
+          <span class="art-size">~12" tall</span>
+        </div>
+        <p class="art-description">
+          A cuddly striped tiger with a cozy green scarf and soft stitched details—ready for big hugs.
+        </p>
+        <span class="badge">Available</span>
+      </div>
     </div>
-  </section>
+
+    <!-- Duck -->
+    <div class="art-card">
+      <div class="art-image-wrap">
+        <img src="duck.jpeg" alt="Crochet Duck">
+      </div>
+      <div class="art-body">
+        <h3 class="art-title">Sunny Duck</h3>
+        <div class="art-meta">
+          <span class="art-price">$—</span>
+          <span class="art-size">~9" tall</span>
+        </div>
+        <p class="art-description">
+          A bright, chubby duck with little wings and oversized feet—simple, cute, and super squishable.
+        </p>
+        <span class="badge">Available</span>
+      </div>
+    </div>
+
+    <!-- Frog -->
+    <div class="art-card">
+      <div class="art-image-wrap">
+        <img src="froggy.jpeg" alt="Crochet Frog">
+      </div>
+      <div class="art-body">
+        <h3 class="art-title">Pocket Frog</h3>
+        <div class="art-meta">
+          <span class="art-price">$—</span>
+          <span class="art-size">~6" tall</span>
+        </div>
+        <p class="art-description">
+          A pocket-sized froggy friend with a soft white belly and sweet sleepy vibe—great for desks or backpacks.
+        </p>
+        <span class="badge">Available</span>
+      </div>
+    </div>
+
+    <!-- Peppers -->
+    <div class="art-card">
+      <div class="art-image-wrap">
+        <img src="peppers.jpeg" alt="Crochet Peppers">
+      </div>
+      <div class="art-body">
+        <h3 class="art-title">Smiling Peppers (Set of 2)</h3>
+        <div class="art-meta">
+          <span class="art-price">$—</span>
+          <span class="art-size">~4" tall each</span>
+        </div>
+        <p class="art-description">
+          Two tiny smiling peppers—one red, one green—fun little plushies that make great gifts or mini décor.
+        </p>
+        <span class="badge">Available</span>
+      </div>
+    </div>
+
+  </div>
+</section>
 
 </div>
 
@@ -318,9 +245,3 @@
 
 </body>
 </html>
-
-
-
-
-
-
