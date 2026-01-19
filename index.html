@@ -42,17 +42,17 @@
       margin: 0;
       font-size: clamp(2.2rem, 4vw, 3rem);
       font-weight: 500;      /* Light */
-      font-style: italic;   /* Italic */
+      font-style: italic;    /* Italic */
       letter-spacing: 0.01em; /* Much tighter */
     }
 
-     header h2 {
+    header h2 {
       margin: 0;
       font-size: clamp(1.5rem, 4vw, 2rem);
       font-weight: 100;      /* Light */
       letter-spacing: 0.01em; /* Much tighter */
     }
-    
+
     header p {
       margin: 0.5rem 0 0;
       font-size: 1rem;
@@ -98,6 +98,7 @@
     }
 
     .art-image-wrap {
+      position: relative; /* needed so arrows can position correctly */
       width: 100%;
       aspect-ratio: 3 / 4; /* UPDATED */
       background: #e6eef8;
@@ -166,7 +167,7 @@
       box-shadow: 0 6px 18px rgba(0,0,0,0.08);
       border: 1px solid rgba(0,0,0,0.05);
       font-size: 0.95rem;
-    /}
+    }
 
     /* CONTACT */
     .contact-card {
@@ -196,41 +197,40 @@
       background: rgba(255,255,255,0.4);
       color: #1a1a1a;
     }
-/* added the section below from ChatGPT, 1/19/2026, used for adding the scrolling image feature. everything from here to the slash-style tag */
 
+    /* added the section below from ChatGPT, 1/19/2026, used for adding the scrolling image feature. */
 
-.carousel-image {
-  display: none;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
+    .art-image-wrap .carousel-image {
+      display: none;
+      width: 100%;
+      height: 100%;
+      object-fit: contain; /* keep same behavior as all images */
+    }
 
-.carousel-image.active {
-  display: block;
-}
+    .art-image-wrap .carousel-image.active {
+      display: block;
+    }
 
-.arrow {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(0,0,0,0.5);
-  color: white;
-  border: none;
-  font-size: 22px;
-  padding: 6px 10px;
-  cursor: pointer;
-}
+    .arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0,0,0,0.5);
+      color: white;
+      border: none;
+      font-size: 22px;
+      padding: 6px 10px;
+      cursor: pointer;
+      z-index: 2;
+    }
 
-.arrow.left {
-  left: 5px;
-}
+    .arrow.left {
+      left: 5px;
+    }
 
-.arrow.right {
-  right: 5px;
-}
-
-    
+    .arrow.right {
+      right: 5px;
+    }
   </style>
 </head>
 
@@ -243,7 +243,7 @@
 </header>
 
 <div class="container">
-  
+
   <section id="about">
     <h2>About the Artist</h2>
     <div class="about-card">
@@ -256,113 +256,113 @@
       </p>
     </div>
   </section>
-  
+
   <section id="gallery">
     <h2>Available Artwork</h2>
     <p>Each piece is handmade and one-of-a-kind. To purchase, reference the piece name when contacting.
 <br><br>
-    Note: Each peice is made to order and may take weeks to complete. If noted otherwise, some will be available to purcahse immediately and will be shipped.</p>
+    Note: Each peice is made to order and may take weeks to complete. If noted otherwise, some will be available to purcahse immidetly and will be shipped.</p>
     <div class="gallery-grid">
+
       <!-- Snowman -->
-    <div class="art-card">
-      <div class="art-image-wrap">
-        <img src="snowman.jpeg" alt="Crochet Snowman">
-      </div>
-      <div class="art-body">
-        <h3 class="art-title">Winter Snowman</h3>
-        <div class="art-meta">
-          <span class="art-price">$25</span>
-          <span class="art-size">10" tall</span>
+      <div class="art-card">
+        <div class="art-image-wrap">
+          <img src="snowman.jpeg" alt="Crochet Snowman">
         </div>
-        <p class="art-description">
-          A cheerful winter snowman with a bright red hat and scarf—perfect for holiday shelves and gifts.
-        </p>
-        <span class="badge">Available</span>
-      </div>
-    </div>
-
-    <!-- Tiger -->
-    <div class="art-card">
-      <div class="art-image-wrap">
-        <img src="tiger.jpeg" alt="Crochet Tiger">
-      </div>
-      <div class="art-body">
-        <h3 class="art-title">Striped Tiger</h3>
-        <div class="art-meta">
-          <span class="art-price">$25</span>
-          <span class="art-size">~12" tall</span>
+        <div class="art-body">
+          <h3 class="art-title">Winter Snowman</h3>
+          <div class="art-meta">
+            <span class="art-price">$25</span>
+            <span class="art-size">10" tall</span>
+          </div>
+          <p class="art-description">
+            A cheerful winter snowman with a bright red hat and scarf—perfect for holiday shelves and gifts.
+          </p>
+          <span class="badge">Available</span>
         </div>
-        <p class="art-description">
-          A cuddly striped tiger with a cozy green scarf and soft stitched details—ready for big hugs.
-        </p>
-        <span class="badge">Available</span>
       </div>
-    </div>
 
-<!-- Duck -->
-<div class="art-card">
-  <div class="art-image-wrap">
-    <button class="arrow left" onclick="changeImage(this, -1)">&#10094;</button>
-
-    <img src="duck.jpeg" class="carousel-image active">
-    <img src="tiger.jpeg" class="carousel-image">
-    <img src="duck.jpeg" class="carousel-image">
-
-    <button class="arrow right" onclick="changeImage(this, 1)">&#10095;</button>
-  </div>
-
-  <div class="art-body">
-    <h3 class="art-title">Sunny Duck</h3>
-    <div class="art-meta">
-      <span class="art-price">$25</span>
-      <span class="art-size">~9" tall</span>
-    </div>
-    <p class="art-description">
-      A bright, chubby duck with little wings and oversized feet—simple, cute, and super squishable.
-    </p>
-    <span class="badge">Available</span>
-  </div>
-</div>
-
-    <!-- Frog -->
-    <div class="art-card">
-      <div class="art-image-wrap">
-        <img src="froggy.jpeg" alt="Crochet Frog">
-      </div>
-      <div class="art-body">
-        <h3 class="art-title">Pocket Frog</h3>
-        <div class="art-meta">
-          <span class="art-price">$15</span>
-          <span class="art-size">~6" tall</span>
+      <!-- Tiger -->
+      <div class="art-card">
+        <div class="art-image-wrap">
+          <img src="tiger.jpeg" alt="Crochet Tiger">
         </div>
-        <p class="art-description">
-          A pocket-sized froggy friend with a soft white belly and sweet sleepy vibe—great for desks or backpacks.
-        </p>
-        <span class="badge">Available</span>
-      </div>
-    </div>
-
-    <!-- Peppers -->
-    <div class="art-card">
-      <div class="art-image-wrap">
-        <img src="peppers.jpeg" alt="Crochet Peppers">
-      </div>
-      <div class="art-body">
-        <h3 class="art-title">Smiling Peppers (Set of 2)</h3>
-        <div class="art-meta">
-          <span class="art-price">$35</span>
-          <span class="art-size">~4" tall each</span>
+        <div class="art-body">
+          <h3 class="art-title">Striped Tiger</h3>
+          <div class="art-meta">
+            <span class="art-price">$25</span>
+            <span class="art-size">~12" tall</span>
+          </div>
+          <p class="art-description">
+            A cuddly striped tiger with a cozy green scarf and soft stitched details—ready for big hugs.
+          </p>
+          <span class="badge">Available</span>
         </div>
-        <p class="art-description">
-          Two tiny smiling peppers—one red, one green—fun little plushies that make great gifts or mini décor.
-        </p>
-        <span class="badge">Available</span>
       </div>
-    </div>
+
+      <!-- Duck -->
+      <div class="art-card">
+        <div class="art-image-wrap">
+          <button type="button" class="arrow left" onclick="changeImage(this, -1)">&#10094;</button>
+
+          <img src="duck.jpeg" class="carousel-image active" alt="Sunny Duck - photo 1">
+          <img src="tiger.jpeg" class="carousel-image" alt="Sunny Duck - photo 2">
+          <img src="duck.jpeg" class="carousel-image" alt="Sunny Duck - photo 3">
+
+          <button type="button" class="arrow right" onclick="changeImage(this, 1)">&#10095;</button>
+        </div>
+
+        <div class="art-body">
+          <h3 class="art-title">Sunny Duck</h3>
+          <div class="art-meta">
+            <span class="art-price">$25</span>
+            <span class="art-size">~9" tall</span>
+          </div>
+          <p class="art-description">
+            A bright, chubby duck with little wings and oversized feet—simple, cute, and super squishable.
+          </p>
+          <span class="badge">Available</span>
+        </div>
+      </div>
+
+      <!-- Frog -->
+      <div class="art-card">
+        <div class="art-image-wrap">
+          <img src="froggy.jpeg" alt="Crochet Frog">
+        </div>
+        <div class="art-body">
+          <h3 class="art-title">Pocket Frog</h3>
+          <div class="art-meta">
+            <span class="art-price">$15</span>
+            <span class="art-size">~6" tall</span>
+          </div>
+          <p class="art-description">
+            A pocket-sized froggy friend with a soft white belly and sweet sleepy vibe—great for desks or backpacks.
+          </p>
+          <span class="badge">Available</span>
+        </div>
+      </div>
+
+      <!-- Peppers -->
+      <div class="art-card">
+        <div class="art-image-wrap">
+          <img src="peppers.jpeg" alt="Crochet Peppers">
+        </div>
+        <div class="art-body">
+          <h3 class="art-title">Smiling Peppers (Set of 2)</h3>
+          <div class="art-meta">
+            <span class="art-price">$35</span>
+            <span class="art-size">~4" tall each</span>
+          </div>
+          <p class="art-description">
+            Two tiny smiling peppers—one red, one green—fun little plushies that make great gifts or mini décor.
+          </p>
+          <span class="badge">Available</span>
+        </div>
+      </div>
 
     </div>
   </section>
-
 
   <section id="contact">
     <h2>Contact & Purchasing</h2>
@@ -372,7 +372,7 @@
         <li>The artwork name</li>
         <li>About when and where (in the Raleigh, NC area) you'd be able to meet. Or, if shipping is required, I will do my best to estimate it up front, but please understand that the cost may change when the items are
           completed and actually ready for shipping.</li>
-        <li>Any details about timing or deadlines, if any
+        <li>Any details about timing or deadlines, if any</li>
         <li>Any notes (if applicable)</li>
       </ul>
 
@@ -395,7 +395,7 @@
   document.getElementById("year").textContent = new Date().getFullYear();
 </script>
 
-  <script>
+<script>
 function changeImage(button, direction) {
   const wrapper = button.parentElement;
   const images = wrapper.querySelectorAll(".carousel-image");
@@ -426,21 +426,3 @@ function changeImage(button, direction) {
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
