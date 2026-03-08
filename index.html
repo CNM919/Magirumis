@@ -141,7 +141,7 @@
       opacity: 0.8;
     }
 
-    /* BADGES (restored) */
+    /* BADGES (the little oval statuses under each description) */
     .badge {
       display: inline-block;
       margin-top: 0.4rem;
@@ -158,7 +158,13 @@
       background: #94a3b8;
       color: #ffffff;
     }
+    }
 
+    .badge.madetoorder {
+      background: #94a3b8;
+      color: #ffffff;
+    }
+    
     /* ABOUT */
     .about-card {
       background: var(--card-bg);
@@ -258,10 +264,8 @@
   </section>
 
   <section id="gallery">
-    <h2>Available Artwork</h2>
-    <p>Each piece is handmade and one-of-a-kind. To purchase, reference the piece name when contacting.
-<br><br>
-    Note: Each peice is made to order and may take weeks to complete. If noted otherwise, some will be available to purcahse immidetly and will be shipped.</p>
+    <h2> Artwork</h2>
+    <p>Each piece is handmade by me and one-of-a-kind. Some pieces (noted as "Made to Order") must be made to order and could take weeks to complete. If noted as "", it can be purchased and shipped immediately.</p>
     <div class="gallery-grid">
 
       <!-- Snowman -->
@@ -278,7 +282,7 @@
           <p class="art-description">
             A cheerful winter snowman with a bright red hat and scarf—perfect for holiday shelves and gifts.
           </p>
-          <span class="badge">Available</span>
+          <span class="badge">Made to Order</span>
         </div>
       </div>
 
@@ -303,13 +307,13 @@
       <!-- Duck -->
       <div class="art-card">
         <div class="art-image-wrap">
-          <button type="button" class="arrow left" onclick="changeImage(this, -1)">&#10094;</button>
+          <button type="button" class="arrow left" onclick="changeImage(this, -1)" aria-label="Previous image">&#10094;</button>
 
           <img src="duck.jpeg" class="carousel-image active" alt="Sunny Duck - photo 1">
           <img src="tiger.jpeg" class="carousel-image" alt="Sunny Duck - photo 2">
-          <img src="duck.jpeg" class="carousel-image" alt="Sunny Duck - photo 3">
+          <img src="snowman.jpeg" class="carousel-image" alt="Sunny Duck - photo 3">
 
-          <button type="button" class="arrow right" onclick="changeImage(this, 1)">&#10095;</button>
+          <button type="button" class="arrow right" onclick="changeImage(this, 1)" aria-label=Next Image">&#10095;</button>
         </div>
 
         <div class="art-body">
@@ -426,3 +430,4 @@ function changeImage(button, direction) {
 
 </body>
 </html>
+
