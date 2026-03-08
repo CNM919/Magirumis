@@ -154,14 +154,20 @@
       color: #ffffff;
     }
 
+    .badge.available {
+      background: #98d94f; /* green colored badge*/
+      color: #ffffff;
+    } 
+    }
+
     .badge.sold {
-      background: #94a3b8;
+      background: #94a3b8; /* grey colored badge*/
       color: #ffffff;
     }
     }
 
     .badge.madetoorder {
-      background: #94a3b8;
+      background: var(--accent2); /* blue colored badge*/
       color: #ffffff;
     }
     
@@ -282,7 +288,7 @@
           <p class="art-description">
             A cheerful winter snowman with a bright red hat and scarf—perfect for holiday shelves and gifts.
           </p>
-          <span class="badge">Made to Order</span>
+          <span class="badge.madetoorder">Made to Order</span>
         </div>
       </div>
 
@@ -300,7 +306,7 @@
           <p class="art-description">
             A cuddly striped tiger with a cozy green scarf and soft stitched details—ready for big hugs.
           </p>
-          <span class="badge">Available</span>
+          <span class="badge.available">Available</span>
         </div>
       </div>
 
@@ -325,7 +331,7 @@
           <p class="art-description">
             A bright, chubby duck with little wings and oversized feet—simple, cute, and super squishable.
           </p>
-          <span class="badge">Available</span>
+          <span class="badge.sold">Available</span>
         </div>
       </div>
 
@@ -430,4 +436,5 @@ function changeImage(button, direction) {
 
 </body>
 </html>
+
 
