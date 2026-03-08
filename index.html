@@ -273,43 +273,11 @@
   <div class="gallery-grid">
     
     <!-- THIS SECTION CONTAINS ALL THE INDIVIDUAL LISTINGS WITH PICTURES, DESCRIPTIONS, ETC -->
+    <!-- Options for badges are: -->
+        <!-- <span class="badge available">Available</span> -->
+        <!-- <span class="badge madetoorder">Made to Order</span> -->
+        <!-- <span class="badge unavailable">Unavailable</span> -->
     
-    
-      <!-- Snowman -->
-      <div class="art-card">
-        <div class="art-image-wrap">
-          <img src="snowman.jpeg" alt="Crochet Snowman">
-        </div>
-        <div class="art-body">
-          <h3 class="art-title">Winter Snowman</h3>
-          <div class="art-meta">
-            <span class="art-price">$25</span>
-            <span class="art-size">10" tall</span>
-          </div>
-          <p class="art-description">
-            A cheerful winter snowman with a bright red hat and scarf—perfect for holiday shelves and gifts.
-          </p>
-          <span class="badge madetoorder">Made to Order</span>
-        </div>
-      </div>
-
-      <!-- Tiger -->
-      <div class="art-card">
-        <div class="art-image-wrap">
-          <img src="tiger.jpeg" alt="Crochet Tiger">
-        </div>
-        <div class="art-body">
-          <h3 class="art-title">Striped Tiger</h3>
-          <div class="art-meta">
-            <span class="art-price">$25</span>
-            <span class="art-size">~12" tall</span>
-          </div>
-          <p class="art-description">
-            A cuddly striped tiger with a cozy green scarf and soft stitched details—ready for big hugs.
-          </p>
-          <span class="badge available">Available</span>
-        </div>
-      </div>
 
       <!-- Duck -->
       <div class="art-card">
@@ -336,41 +304,108 @@
         </div>
       </div>
 
-      <!-- Frog -->
+
+          <!-- Duck -->
       <div class="art-card">
         <div class="art-image-wrap">
-          <img src="froggy.jpeg" alt="Crochet Frog">
+          <button type="button" class="arrow left" onclick="changeImage(this, -1)" aria-label="Previous image">&#10094;</button>
+
+          <img src="duck.jpeg" class="carousel-image active" alt="Sunny Duck - photo 1">
+          <img src="tiger.jpeg" class="carousel-image" alt="Sunny Duck - photo 2">
+          <img src="snowman.jpeg" class="carousel-image" alt="Sunny Duck - photo 3">
+
+          <button type="button" class="arrow right" onclick="changeImage(this, 1)" aria-label=Next Image">&#10095;</button>
         </div>
+
         <div class="art-body">
-          <h3 class="art-title">Pocket Frog</h3>
+          <h3 class="art-title">Sunny Duck</h3>
           <div class="art-meta">
-            <span class="art-price">$15</span>
-            <span class="art-size">~6" tall</span>
+            <span class="art-price">$25</span>
+            <span class="art-size">~9" tall</span>
           </div>
           <p class="art-description">
-            A pocket-sized froggy friend with a soft white belly and sweet sleepy vibe—great for desks or backpacks.
+            A bright, chubby duck with little wings and oversized feet—simple, cute, and super squishable.
           </p>
-          <span class="badge">Available</span>
+          <span class="badge unavailable">Unavailable</span>
         </div>
       </div>
 
-      <!-- Peppers -->
+          <!-- Duck -->
       <div class="art-card">
         <div class="art-image-wrap">
-          <img src="peppers.jpeg" alt="Crochet Peppers">
+          <button type="button" class="arrow left" onclick="changeImage(this, -1)" aria-label="Previous image">&#10094;</button>
+
+          <img src="duck.jpeg" class="carousel-image active" alt="Sunny Duck - photo 1">
+          <img src="tiger.jpeg" class="carousel-image" alt="Sunny Duck - photo 2">
+          <img src="snowman.jpeg" class="carousel-image" alt="Sunny Duck - photo 3">
+
+          <button type="button" class="arrow right" onclick="changeImage(this, 1)" aria-label=Next Image">&#10095;</button>
         </div>
+
         <div class="art-body">
-          <h3 class="art-title">Smiling Peppers (Set of 2)</h3>
+          <h3 class="art-title">Sunny Duck</h3>
           <div class="art-meta">
-            <span class="art-price">$35</span>
-            <span class="art-size">~4" tall each</span>
+            <span class="art-price">$25</span>
+            <span class="art-size">~9" tall</span>
           </div>
           <p class="art-description">
-            Two tiny smiling peppers—one red, one green—fun little plushies that make great gifts or mini décor.
+            A bright, chubby duck with little wings and oversized feet—simple, cute, and super squishable.
           </p>
-          <span class="badge">Available</span>
+          <span class="badge unavailable">Unavailable</span>
         </div>
       </div>
+
+          <!-- Duck -->
+      <div class="art-card">
+        <div class="art-image-wrap">
+          <button type="button" class="arrow left" onclick="changeImage(this, -1)" aria-label="Previous image">&#10094;</button>
+
+          <img src="duck.jpeg" class="carousel-image active" alt="Sunny Duck - photo 1">
+          <img src="tiger.jpeg" class="carousel-image" alt="Sunny Duck - photo 2">
+          <img src="snowman.jpeg" class="carousel-image" alt="Sunny Duck - photo 3">
+
+          <button type="button" class="arrow right" onclick="changeImage(this, 1)" aria-label=Next Image">&#10095;</button>
+        </div>
+
+        <div class="art-body">
+          <h3 class="art-title">Sunny Duck</h3>
+          <div class="art-meta">
+            <span class="art-price">$25</span>
+            <span class="art-size">~9" tall</span>
+          </div>
+          <p class="art-description">
+            A bright, chubby duck with little wings and oversized feet—simple, cute, and super squishable.
+          </p>
+          <span class="badge unavailable">Unavailable</span>
+        </div>
+      </div>
+
+          <!-- Duck -->
+      <div class="art-card">
+        <div class="art-image-wrap">
+          <button type="button" class="arrow left" onclick="changeImage(this, -1)" aria-label="Previous image">&#10094;</button>
+
+          <img src="duck.jpeg" class="carousel-image active" alt="Sunny Duck - photo 1">
+          <img src="tiger.jpeg" class="carousel-image" alt="Sunny Duck - photo 2">
+          <img src="snowman.jpeg" class="carousel-image" alt="Sunny Duck - photo 3">
+
+          <button type="button" class="arrow right" onclick="changeImage(this, 1)" aria-label=Next Image">&#10095;</button>
+        </div>
+
+        <div class="art-body">
+          <h3 class="art-title">Sunny Duck</h3>
+          <div class="art-meta">
+            <span class="art-price">$25</span>
+            <span class="art-size">~9" tall</span>
+          </div>
+          <p class="art-description">
+            A bright, chubby duck with little wings and oversized feet—simple, cute, and super squishable.
+          </p>
+          <span class="badge unavailable">Unavailable</span>
+        </div>
+      </div>
+
+
 
     </div>
   </section>
@@ -437,6 +472,7 @@ function changeImage(button, direction) {
 
 </body>
 </html>
+
 
 
 
