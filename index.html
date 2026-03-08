@@ -159,7 +159,7 @@
       color: #ffffff;
     }
 
-    .badge.sold {
+    .badge.unavailable {
       background: #94a3b8; /* grey colored badge*/
       color: #ffffff;
     }
@@ -269,9 +269,12 @@
 
   <section id="gallery">
     <h2> Artwork</h2>
-    <p>Each piece is handmade by me and one-of-a-kind. Some pieces (noted as "Made to Order") must be made to order and could take weeks to complete. If noted as "", it can be purchased and shipped immediately.</p>
+    <p>Each piece is handmade by me and one-of-a-kind. Those noted as "Made to Order" are waiting to be crafted on order and could take weeks to complete. If noted as "Available", it can be purchased and shipped immediately. Those noted as "Unavailable" can't be made at this time. </p>
     <div class="gallery-grid">
 
+      
+      
+/* THIS SECTION CONTAINS ALL THE INDIVIDUAL LISTINGS WITH PICTURES, DESCRIPTIONS,  ETC */
       <!-- Snowman -->
       <div class="art-card">
         <div class="art-image-wrap">
@@ -286,7 +289,7 @@
           <p class="art-description">
             A cheerful winter snowman with a bright red hat and scarf—perfect for holiday shelves and gifts.
           </p>
-          <span class="badge.madetoorder">Made to Order</span>
+          <span class="badge madetoorder">Made to Order</span>
         </div>
       </div>
 
@@ -304,7 +307,7 @@
           <p class="art-description">
             A cuddly striped tiger with a cozy green scarf and soft stitched details—ready for big hugs.
           </p>
-          <span class="badge.available">Available</span>
+          <span class="badge available">Available</span>
         </div>
       </div>
 
@@ -329,7 +332,7 @@
           <p class="art-description">
             A bright, chubby duck with little wings and oversized feet—simple, cute, and super squishable.
           </p>
-          <span class="badge.sold">Available</span>
+          <span class="badge unavailable">Unavailable</span>
         </div>
       </div>
 
@@ -434,6 +437,7 @@ function changeImage(button, direction) {
 
 </body>
 </html>
+
 
 
 
